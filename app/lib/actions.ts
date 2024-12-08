@@ -38,8 +38,6 @@ export async function createInvoice(_prevState: State, formData: FormData) {
     status: formData.get('status'),
   });
 
-  console.log('validatedFields', JSON.stringify(validatedFields));
-
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
@@ -76,8 +74,6 @@ export async function updateInvoice(
     amount: formData.get('amount'),
     status: formData.get('status'),
   });
-
-  console.log('validatedFields', JSON.stringify(validatedFields));
 
   if (!validatedFields.success) {
     return {
